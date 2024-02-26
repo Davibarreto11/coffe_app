@@ -10,7 +10,7 @@ import Favorite from "../pages/Favorite";
 import OrderHistory from "../pages/OrderHistory";
 
 import { COLORS } from "../theme/theme";
-import CustomIcon from "../components/CustomIcon";
+import CustomIcon from "../components/Icon/CustomIcon";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,8 +24,8 @@ const TabNavigator: React.FC = () => {
         tabBarStyle: styles.tabBarStyle,
         tabBarBackground: () => (
           <BlurView
-            overlayColor=""
-            blurAmount={15}
+            overlayColor=''
+            blurAmount={8}
             style={styles.BlurViewStyles}
           />
         ),
@@ -97,7 +97,7 @@ const TabNavigator: React.FC = () => {
 
 const styles = StyleSheet.create({
   tabBarStyle: {
-    height: 75,
+    height: 80,
     position: "absolute",
     backgroundColor: COLORS.primaryBlackRGBA,
     borderTopWidth: 0,
