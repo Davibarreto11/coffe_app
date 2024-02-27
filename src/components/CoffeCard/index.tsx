@@ -51,6 +51,7 @@ const CoffeCard: React.FC<CoffeCardProps> = ({
     >
       <ImageBackground
         source={imagelink_square}
+        onLoad={() => {}}
         style={styles.CardImageBG}
         resizeMode="cover"
       >
