@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  ToastAndroid,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -52,8 +53,13 @@ const Home: React.FC = ({ navigation }: any) => {
   const CoffeList = useStore((state: any) => state.CoffeeList);
   const BeansList = useStore((state: any) => state.BeanList);
 
+  const addToCart = useStore((state: any) => state.addToCart);
+  const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
+
   const [beans, setBeans] = useState(BeansList);
-  const [categories, setCategories] = useState(getCategoriesFromData(CoffeList));
+  const [categories, setCategories] = useState(
+    getCategoriesFromData(CoffeList)
+  );
   const [searchText, setSearchText] = useState("");
   const [categoryIndex, setCategoryIndex] = useState({
     index: 0,
@@ -63,7 +69,6 @@ const Home: React.FC = ({ navigation }: any) => {
     getCoffeeList(categoryIndex.category, CoffeList)
   );
 
-  console.log(sortedCoffe[16])
   const handleCategory = useCallback((index: number) => {
     setCategoryIndex({
       index: index,
@@ -96,6 +101,37 @@ const Home: React.FC = ({ navigation }: any) => {
     setSortedCoffe([...CoffeList]);
     setSearchText("");
   }, []);
+
+  const coffeCardAddToCartHandle = useCallback(
+    ({
+      id,
+      index,
+      name,
+      roasted,
+      imagelink_square,
+      special_ingredient,
+      type,
+      prices,
+    }: any) => {
+      addToCart({
+        id,
+        index,
+        name,
+        roasted,
+        imagelink_square,
+        special_ingredient,
+        type,
+        prices,
+      });
+      calculateCartPrice();
+      ToastAndroid.showWithGravity(
+        `${name} is Added to Cart`,
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER
+      );
+    },
+    []
+  );
 
   const listRef: any = useRef<FlatList>();
   const tabBarHeight = useBottomTabBarHeight();
@@ -206,7 +242,7 @@ const Home: React.FC = ({ navigation }: any) => {
                     index: item.index,
                     id: item.id,
                     type: item.type,
-                    imagelink_portrait: item?.imagelink_portrait
+                    imagelink_portrait: item?.imagelink_portrait,
                   });
                 }}
               >
@@ -214,13 +250,13 @@ const Home: React.FC = ({ navigation }: any) => {
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  rosted={item.roasted}
+                  roasted={item.roasted}
                   imagelink_square={item?.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[0]}
-                  buttomPressHandler={() => {}}
+                  buttomPressHandler={coffeCardAddToCartHandle}
                 />
               </TouchableOpacity>
             );
@@ -247,7 +283,7 @@ const Home: React.FC = ({ navigation }: any) => {
                     index: item.index,
                     id: item.id,
                     type: item.type,
-                    imagelink_portrait: item.imagelink_portrait
+                    imagelink_portrait: item.imagelink_portrait,
                   });
                 }}
               >
@@ -255,13 +291,13 @@ const Home: React.FC = ({ navigation }: any) => {
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  rosted={item.roasted}
+                  roasted={item.roasted}
                   imagelink_square={item?.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[0]}
-                  buttomPressHandler={() => {}}
+                  buttomPressHandler={coffeCardAddToCartHandle}
                 />
               </TouchableOpacity>
             );
