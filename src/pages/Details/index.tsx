@@ -46,6 +46,8 @@ interface CoffeeDataParams {
 
 const Details: React.FC = ({ navigation, route }: any) => {
   const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
+  const addToCart = useStore((state: any) => state.addToCart);
+  const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
   const deleteFromFavoriteList = useStore(
     (state: any) => state.deleteFromFavoriteList
   );
@@ -75,9 +77,32 @@ const Details: React.FC = ({ navigation, route }: any) => {
     []
   );
 
-  // const ToggleFavourite = (favourite: boolean, type: string, id: string) => {
-  //   favourite ? deleteFromFavoriteList(type, id) : addToFavoriteList(type, id);
-  // };
+  const AddToCartHandler = useCallback(
+    ({
+      id,
+      index,
+      name,
+      roasted,
+      imagelink_square,
+      special_ingredient,
+      type,
+      price,
+    }: any) => {
+      addToCart({
+        id,
+        index,
+        name,
+        roasted,
+        imagelink_square,
+        special_ingredient,
+        type,
+        prices: [{ ...price, quantity: 1 }],
+      });
+      calculateCartPrice();
+      navigation.navigate("Cart");
+    },
+    []
+  );
 
   const BackHandler = useCallback(() => {
     navigation.pop();
@@ -168,7 +193,18 @@ const Details: React.FC = ({ navigation, route }: any) => {
         <PaymentFooter
           price={price}
           buttonTitle="Add to Cart"
-          buttomPressHandler={() => {}}
+          buttomPressHandler={() => {
+            AddToCartHandler({
+              id: choice.id,
+              index: choice.index,
+              name: choice.name,
+              roasted: choice.roasted,
+              imagelink_square: choice.imagelink_square,
+              special_ingredient: choice.special_ingredient,
+              type: choice.type,
+              price: price,
+            });
+          }}
         />
       </ScrollView>
     </View>
