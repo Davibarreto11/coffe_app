@@ -40,36 +40,36 @@ const getCategoriesFromData = (data: any) => {
   return categories;
 };
 
-const getCoffeList = (category: string, data: any) => {
+const getCoffeeList = (category: string, data: any) => {
   if (category == "All") {
     return data;
   }
-  let coffeList = data.filter((item: any) => item.name == category);
-  return coffeList;
+  let coffeeList = data.filter((item: any) => item.name == category);
+  return coffeeList;
 };
 
 const Home: React.FC = ({ navigation }: any) => {
-  const coffeList = useStore((state: any) => state.CoffeeList);
-  const BeansList = useStore((state: any) => state.BeansList);
+  const CoffeList = useStore((state: any) => state.CoffeeList);
+  const BeansList = useStore((state: any) => state.BeanList);
 
-  const [categories, setCategories] = useState(
-    getCategoriesFromData(coffeList)
-  );
+  const [beans, setBeans] = useState(BeansList);
+  const [categories, setCategories] = useState(getCategoriesFromData(CoffeList));
   const [searchText, setSearchText] = useState("");
   const [categoryIndex, setCategoryIndex] = useState({
     index: 0,
     category: categories[0],
   });
   const [sortedCoffe, setSortedCoffe] = useState(
-    getCoffeList(categoryIndex.category, coffeList)
+    getCoffeeList(categoryIndex.category, CoffeList)
   );
 
+  console.log(sortedCoffe[16])
   const handleCategory = useCallback((index: number) => {
     setCategoryIndex({
       index: index,
       category: categories[index],
     });
-    setSortedCoffe([...getCoffeList(categories[index], coffeList)]);
+    setSortedCoffe(getCoffeeList(categories[index], CoffeList));
   }, []);
 
   const searchCoffe = useCallback((search: string) => {
@@ -80,7 +80,7 @@ const Home: React.FC = ({ navigation }: any) => {
       });
       setCategoryIndex({ index: 0, category: categories[0] });
       setSortedCoffe([
-        ...coffeList.filter((item: any) =>
+        ...CoffeList.filter((item: any) =>
           item.name.toLowerCase().includes(search.toLowerCase())
         ),
       ]);
@@ -93,7 +93,7 @@ const Home: React.FC = ({ navigation }: any) => {
       offSet: 0,
     });
     setCategoryIndex({ index: 0, category: categories[0] });
-    setSortedCoffe([...coffeList]);
+    setSortedCoffe([...CoffeList]);
     setSearchText("");
   }, []);
 
@@ -206,6 +206,7 @@ const Home: React.FC = ({ navigation }: any) => {
                     index: item.index,
                     id: item.id,
                     type: item.type,
+                    imagelink_portrait: item?.imagelink_portrait
                   });
                 }}
               >
@@ -213,7 +214,7 @@ const Home: React.FC = ({ navigation }: any) => {
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  rosted={item.rosted}
+                  rosted={item.roasted}
                   imagelink_square={item?.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
@@ -232,7 +233,7 @@ const Home: React.FC = ({ navigation }: any) => {
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
-          data={BeansList}
+          data={beans}
           contentContainerStyle={[
             styles.FlatListContainer,
             { marginBottom: tabBarHeight },
@@ -241,24 +242,25 @@ const Home: React.FC = ({ navigation }: any) => {
           renderItem={({ item }) => {
             return (
               <TouchableOpacity
-              onPress={() => {
-                navigation.push("Details", {
-                  index: item.index,
-                  id: item.id,
-                  type: item.type,
-                });
-              }}
+                onPress={() => {
+                  navigation.push("Details", {
+                    index: item.index,
+                    id: item.id,
+                    type: item.type,
+                    imagelink_portrait: item.imagelink_portrait
+                  });
+                }}
               >
                 <CoffeCard
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  rosted={item.rosted}
-                  imagelink_square={item?.imagelink_portrait}
+                  rosted={item.roasted}
+                  imagelink_square={item?.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
-                  price={item.prices[1]}
+                  price={item.prices[0]}
                   buttomPressHandler={() => {}}
                 />
               </TouchableOpacity>
