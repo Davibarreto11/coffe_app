@@ -10,7 +10,13 @@ import {
 } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
-import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from "../../theme/theme";
+import {
+  BORDERRADIUS,
+  COLORS,
+  FONTFAMILY,
+  FONTSIZE,
+  SPACING,
+} from "../../theme/theme";
 
 import CustomIcon from "../Icon/CustomIcon";
 import BGIcon from "../Icon/BGIcon";
@@ -21,7 +27,7 @@ interface CoffeCardProps {
   id: string;
   index: number;
   type: string;
-  rosted: string;
+  roasted: string;
   imagelink_square: ImageProps;
   name: string;
   special_ingredient: string;
@@ -34,7 +40,7 @@ const CoffeCard: React.FC<CoffeCardProps> = ({
   id,
   index,
   type,
-  rosted,
+  roasted,
   imagelink_square,
   name,
   special_ingredient,
@@ -70,7 +76,20 @@ const CoffeCard: React.FC<CoffeCardProps> = ({
         <Text style={styles.CardPriceCurrency}>
           $ <Text style={styles.CardPrice}>{price.price}</Text>
         </Text>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            buttomPressHandler({
+              id,
+              index,
+              type,
+              roasted,
+              imagelink_square,
+              name,
+              special_ingredient,
+              prices: [{...price, quantity: 1}],
+            });
+          }}
+        >
           <BGIcon
             color={COLORS.primaryWhiteHex}
             name="add"
@@ -96,13 +115,13 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   CardRatingContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     backgroundColor: COLORS.primaryBlackRGBA,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     gap: SPACING.space_10,
     paddingHorizontal: SPACING.space_15,
-    position: 'absolute',
+    position: "absolute",
     borderBottomLeftRadius: BORDERRADIUS.radius_20,
     borderTopRightRadius: BORDERRADIUS.radius_20,
     top: 0,
@@ -125,9 +144,9 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_10,
   },
   CardFooterRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginTop: SPACING.space_15,
   },
   CardPriceCurrency: {
