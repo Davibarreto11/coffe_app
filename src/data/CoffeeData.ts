@@ -1,11 +1,15 @@
+import Coffee_square_1 from '../assets/coffee_assets/americano/square/americano_pic_1_square.png'
+import Coffee_portrait_1 from '../assets/coffee_assets/americano/portrait/americano_pic_1_portrait.png'
+
+
 const CoffeeData = [
   {
     id: "C1",
     name: "Americano",
     description: `The Americano is another popular type of coffee drink, and it's very easy to make! It's just espresso with hot water dripping over it. The name came about during World War II when European baristas added water to their espresso drinks for the American soldiers stationed there. The resulting drink had a smoother, less concentrated flavour than espresso and thus the Americano was born.`,
     roasted: "Medium Roasted",
-    imagelink_square: require("../assets/coffee_assets/americano/square/americano_pic_1_square.png"),
-    imagelink_portrait: require("../assets/coffee_assets/americano/portrait/americano_pic_1_portrait.png"),
+    imagelink_square: Coffee_square_1,
+    imagelink_portrait: Coffee_portrait_1,
     ingredients: "Milk",
     special_ingredient: "With Steamed Milk",
     prices: [
@@ -360,5 +364,4 @@ const CoffeeData = [
     index: 17,
   },
 ];
-
 export default CoffeeData;
