@@ -20,6 +20,7 @@ import CustomIcon from "../Icon/CustomIcon";
 interface CartItemProps {
   id: string;
   name: string;
+  imagelink_portrait: ImageProps;
   imagelink_square: ImageProps;
   special_ingredient: string;
   roasted: string;
@@ -32,6 +33,7 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({
   id,
   name,
+  imagelink_portrait,
   imagelink_square,
   special_ingredient,
   roasted,
@@ -159,6 +161,37 @@ const CartItem: React.FC<CartItemProps> = ({
                 <Text style={styles.SizePrice}>{prices[0].price}</Text>
               </Text>
             </View>
+            <View style={styles.CartItemSingleQuantityContainer}>
+              <TouchableOpacity
+                style={styles.CartItemIcon}
+                onPress={() => {
+                  decrementCartItemQuantityHandle(id, prices[0].size);
+                }}
+              >
+                <CustomIcon
+                  name="minus"
+                  color={COLORS.primaryWhiteHex}
+                  size={FONTSIZE.size_10}
+                />
+              </TouchableOpacity>
+              <View style={styles.CartItemQuantityContainer}>
+                <Text style={styles.CartItemQuantityText}>
+                  {prices[0].quantity}
+                </Text>
+              </View>
+              <TouchableOpacity
+                style={styles.CartItemIcon}
+                onPress={() => {
+                  incrementCartItemQuantityHandle(id, prices[0].size);
+                }}
+              >
+                <CustomIcon
+                  name="add"
+                  color={COLORS.primaryWhiteHex}
+                  size={FONTSIZE.size_10}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
         </LinearGradient>
       )}
@@ -281,9 +314,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   CartItemSingleSizeValueContainer: {
-    height: 150,
-    width: 150,
-    borderRadius: BORDERRADIUS.radius_20,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  CartItemSingleQuantityContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
   },
 });
 
