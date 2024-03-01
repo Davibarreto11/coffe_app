@@ -19,7 +19,7 @@ import {
   SPACING,
 } from "../../theme/theme";
 import ImageBackgroundInfo from "../../components/ImageBackgroundInfo";
-import PaymentFooter from "../../components/PaymentFooter";
+import PaymentFooter from "../../components/Payment/Footer";
 
 interface CoffeeDataParams {
   id: string;
