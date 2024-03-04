@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     height: SPACING.space_36,
     width: SPACING.space_36,
     borderRadius: SPACING.space_12,
-    borderColor: COLORS.secondaryDarkGreyHex,
+    borderColor: COLORS.secondaryChampagnePinkHex,
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",

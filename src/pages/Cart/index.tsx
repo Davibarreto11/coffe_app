@@ -17,7 +17,7 @@ import EmptyListAnimation from "../../components/Animation/EmptyList";
 import PaymentFooter from "../../components/Payment/Footer";
 import CartItem from "../../components/CartItem";
 
-const Cart: React.FC = ({ navigation, route }: any) => {
+const CartScreen: React.FC = ({ navigation, route }: any) => {
   const CartList = useStore((state: any) => state.CartList);
   const CartPrice = useStore((state: any) => state.CartPrice);
 
@@ -55,7 +55,7 @@ const Cart: React.FC = ({ navigation, route }: any) => {
 
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+      <StatusBar backgroundColor={COLORS.primaryPaleDogwoodHex} />
 
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -127,7 +127,7 @@ const Cart: React.FC = ({ navigation, route }: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
   },
   ScrollViewFlex: {
     flexGrow: 1,
@@ -145,4 +145,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Cart;
+export default CartScreen;

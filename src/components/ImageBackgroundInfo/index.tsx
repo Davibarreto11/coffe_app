@@ -59,7 +59,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
             <TouchableOpacity onPress={() => BackHandler()}>
               <GradientBGIcon
                 name="left"
-                color={COLORS.primaryLightGreyHex}
+                color={COLORS.primaryPaleDogwoodHex}
                 size={FONTSIZE.size_16}
               />
             </TouchableOpacity>
@@ -69,7 +69,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               <GradientBGIcon
                 name="like"
                 color={
-                  favourite ? COLORS.primaryRedHex : COLORS.primaryLightGreyHex
+                  favourite ? COLORS.primaryRedHex : COLORS.primaryPaleDogwoodHex
                 }
                 size={FONTSIZE.size_16}
               />
@@ -83,7 +83,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               <GradientBGIcon
                 name="like"
                 color={
-                  favourite ? COLORS.primaryRedHex : COLORS.primaryLightGreyHex
+                  favourite ? COLORS.primaryRedHex : COLORS.primaryPaleDogwoodHex
                 }
                 size={FONTSIZE.size_16}
               />
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   ImageInfoOuterContainer: {
     paddingVertical: SPACING.space_24,
     paddingHorizontal: SPACING.space_30,
-    backgroundColor: COLORS.primaryBlackRGBA,
+    backgroundColor: COLORS.primaryPaleDogwoodRGBA,
     borderTopLeftRadius: BORDERRADIUS.radius_20 * 2,
     borderTopRightRadius: BORDERRADIUS.radius_20 * 2,
   },
@@ -189,10 +189,10 @@ const styles = StyleSheet.create({
   ItemTitleText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_24,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   ItemSubTitleText: {
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_12,
   },
@@ -207,12 +207,12 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_15,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
   },
   PropertyTextFirst: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_10,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   RatingContainer: {
     flexDirection: "row",
@@ -222,12 +222,12 @@ const styles = StyleSheet.create({
   RatingText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   RatingCountText: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_12,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   RoastedContainer: {
     height: 55,
@@ -235,12 +235,12 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_15,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
   },
   RoastedText: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_10,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   }
 });
 

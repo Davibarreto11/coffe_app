@@ -58,7 +58,7 @@ const FavoritesItemCard: React.FC<FavoritesItemCardProps> = ({
       <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
-        colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+        colors={[COLORS.primaryIsabellineHex, COLORS.primaryPaleDogwoodHex]}
         style={styles.ContainerLinearGradient}>
         <Text style={styles.DescriptionTitle}>Description</Text>
         <Text style={styles.DescriptionText}>{description}</Text>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   DescriptionText: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
 });
 

@@ -48,7 +48,7 @@ const CartItem: React.FC<CartItemProps> = ({
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+          colors={[COLORS.primaryIsabellineHex, COLORS.primaryPaleDogwoodHex]}
           style={styles.CartItemLinearGradient}
         >
           <View style={styles.CartItemRow}>
@@ -99,7 +99,7 @@ const CartItem: React.FC<CartItemProps> = ({
                 >
                   <CustomIcon
                     name="minus"
-                    color={COLORS.primaryWhiteHex}
+                    color={COLORS.primaryBlackHex}
                     size={FONTSIZE.size_10}
                   />
                 </TouchableOpacity>
@@ -116,7 +116,7 @@ const CartItem: React.FC<CartItemProps> = ({
                 >
                   <CustomIcon
                     name="add"
-                    color={COLORS.primaryWhiteHex}
+                    color={COLORS.primaryBlackHex}
                     size={FONTSIZE.size_10}
                   />
                 </TouchableOpacity>
@@ -128,7 +128,7 @@ const CartItem: React.FC<CartItemProps> = ({
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+          colors={[COLORS.primaryIsabellineHex, COLORS.primaryPaleDogwoodHex]}
           style={styles.CartItemSingleLinearGradient}
         >
           <View>
@@ -170,7 +170,7 @@ const CartItem: React.FC<CartItemProps> = ({
               >
                 <CustomIcon
                   name="minus"
-                  color={COLORS.primaryWhiteHex}
+                  color={COLORS.primaryBlackHex}
                   size={FONTSIZE.size_10}
                 />
               </TouchableOpacity>
@@ -187,7 +187,7 @@ const CartItem: React.FC<CartItemProps> = ({
               >
                 <CustomIcon
                   name="add"
-                  color={COLORS.primaryWhiteHex}
+                  color={COLORS.primaryBlackHex}
                   size={FONTSIZE.size_10}
                 />
               </TouchableOpacity>
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
   CartItemTitle: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   CartItemSubtitle: {
     fontFamily: FONTFAMILY.poppins_regular,
@@ -237,12 +237,12 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_15,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: COLORS.primaryDarkGreyHex,
+    backgroundColor: COLORS.primaryLinenyHex,
   },
   CartItemRoastedText: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_10,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   CartItemSizeRowContainer: {
     flex: 1,
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   SizeBox: {
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
     height: 40,
     width: 100,
     borderRadius: BORDERRADIUS.radius_10,
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
     color: COLORS.primaryOrangeHex,
   },
   SizePrice: {
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   CartItemIcon: {
     backgroundColor: COLORS.primaryOrangeHex,
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_10,
   },
   CartItemQuantityContainer: {
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
     width: 70,
     borderRadius: BORDERRADIUS.radius_10,
     borderWidth: 2,
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
   CartItemQuantityText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   CartItemSingleLinearGradient: {
     flexDirection: "row",

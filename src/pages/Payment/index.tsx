@@ -45,7 +45,7 @@ const PaymentList = [
   },
 ];
 
-const Payment: React.FC = ({ navigation, route }: any) => {
+const PaymentScreen: React.FC = ({ navigation, route }: any) => {
   const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
   const addToOrderHistoryListFromCart = useStore(
     (state: any) => state.addToOrderHistoryListFromCart
@@ -66,7 +66,7 @@ const Payment: React.FC = ({ navigation, route }: any) => {
 
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+      <StatusBar backgroundColor={COLORS.primaryPaleDogwoodHex} />
       {showAnimation ? (
         <PopUpAnimation
           style={styles.LottieAnimation}
@@ -83,7 +83,7 @@ const Payment: React.FC = ({ navigation, route }: any) => {
           <TouchableOpacity style={{}} onPress={() => navigation.pop()}>
             <GradientBGIcon
               name="left"
-              color={COLORS.primaryLightGreyHex}
+              color={COLORS.primaryBeaverHex}
               size={FONTSIZE.size_16}
             />
           </TouchableOpacity>
@@ -104,7 +104,7 @@ const Payment: React.FC = ({ navigation, route }: any) => {
                   borderColor:
                     paymentMode == "Credit Card"
                       ? COLORS.primaryOrangeHex
-                      : COLORS.primaryGreyHex,
+                      : COLORS.primaryIsabellineHex,
                 },
               ]}
             >
@@ -113,7 +113,7 @@ const Payment: React.FC = ({ navigation, route }: any) => {
                 <LinearGradient
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
-                  colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+                  colors={[COLORS.primaryIsabellineHex, COLORS.primaryPaleDogwoodHex]}
                   style={styles.LinearGradientStyle}
                 >
                   <View style={styles.CreditCardRow}>
@@ -125,7 +125,7 @@ const Payment: React.FC = ({ navigation, route }: any) => {
                     <CustomIcon
                       name="visa"
                       size={FONTSIZE.size_30 * 2}
-                      color={COLORS.primaryWhiteHex}
+                      color={COLORS.primaryBlackHex}
                     />
                   </View>
                   <View style={styles.CreditCardNumberContainer}>
@@ -181,7 +181,7 @@ const Payment: React.FC = ({ navigation, route }: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
   },
   LottieAnimation: {
     flex: 1,
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
   HeaderText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_20,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   EmptyView: {
     height: SPACING.space_36,
@@ -218,11 +218,11 @@ const styles = StyleSheet.create({
   CreditCardTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     marginLeft: SPACING.space_10,
   },
   CreditCardBG: {
-    backgroundColor: COLORS.primaryGreyHex,
+    backgroundColor: COLORS.primaryIsabellineHex,
     borderRadius: BORDERRADIUS.radius_25,
   },
   LinearGradientStyle: {
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
   CreditCardNumber: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     letterSpacing: SPACING.space_4 + SPACING.space_2,
   },
   CreditCardNameSubtitle: {
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
   CreditCardNameTitle: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   CreditCardNameContainer: {
     alignItems: "flex-start",
@@ -265,4 +265,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Payment;
+export default PaymentScreen;

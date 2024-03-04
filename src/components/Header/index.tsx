@@ -15,7 +15,7 @@ const Header: React.FC<HeaderBarProps> = ({ title }) => {
     <View style={styles.HeaderContainer}>
       <GradientBGIcon
         name="menu"
-        color={COLORS.primaryLightGreyHex}
+        color={COLORS.primaryPaleDogwoodHex}
         size={FONTSIZE.size_16}
       />
       <Text style={styles.HeaderText}>{title}</Text>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   HeaderText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_20,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
 });
 

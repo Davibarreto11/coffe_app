@@ -44,7 +44,7 @@ interface CoffeeDataParams {
   index: number;
 }
 
-const Details: React.FC = ({ navigation, route }: any) => {
+const DetailsScreen: React.FC = ({ navigation, route }: any) => {
   const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
   const addToCart = useStore((state: any) => state.addToCart);
   const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
@@ -104,7 +104,7 @@ const Details: React.FC = ({ navigation, route }: any) => {
 
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+      <StatusBar backgroundColor={COLORS.primaryPaleDogwoodHex} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.ScrollViewFlex}
@@ -159,7 +159,7 @@ const Details: React.FC = ({ navigation, route }: any) => {
                     borderColor:
                       data.size == price.size
                         ? COLORS.primaryOrangeHex
-                        : COLORS.primaryDarkGreyHex,
+                        : COLORS.primaryLinenyHex,
                   },
                 ]}
               >
@@ -209,7 +209,7 @@ const Details: React.FC = ({ navigation, route }: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
   },
   ScrollViewFlex: {
     flexGrow: 1,
@@ -221,14 +221,14 @@ const styles = StyleSheet.create({
   InfoTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     marginBottom: SPACING.space_10,
   },
   DescriptionText: {
     letterSpacing: 0.5,
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     marginBottom: SPACING.space_30,
   },
   SizeOuterContainer: {
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   },
   SizeBox: {
     flex: 1,
-    backgroundColor: COLORS.primaryDarkGreyHex,
+    backgroundColor: COLORS.primaryLinenyHex,
     alignItems: "center",
     justifyContent: "center",
     height: SPACING.space_24 * 2,
@@ -251,4 +251,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Details;
+export default DetailsScreen;

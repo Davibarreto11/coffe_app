@@ -31,7 +31,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
           borderColor:
             paymentMode == name
               ? COLORS.primaryOrangeHex
-              : COLORS.primaryGreyHex,
+              : COLORS.primaryIsabellineHex,
         })
       }
     >
@@ -39,7 +39,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+          colors={[COLORS.primaryIsabellineHex, COLORS.primaryPaleDogwoodHex]}
           style={styles.LinearGradientWallet}
         >
           <View style={styles.WallerRow}>
@@ -55,7 +55,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+          colors={[COLORS.primaryIsabellineHex, COLORS.primaryPaleDogwoodHex]}
           style={styles.LinearGradientRegular}
         >
           <Image source={icon} style={styles.PaymentImage} />
@@ -69,7 +69,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
 const styles = StyleSheet.create({
   PaymentCardContainer: {
     borderRadius: BORDERRADIUS.radius_15 * 2,
-    backgroundColor: COLORS.primaryGreyHex,
+    backgroundColor: COLORS.primaryIsabellineHex,
     borderWidth: 3,
   },
   LinearGradientWallet: {
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   PaymentTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   LinearGradientRegular: {
     flexDirection: "row",

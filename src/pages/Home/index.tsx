@@ -23,7 +23,7 @@ import {
 } from "../../theme/theme";
 import Header from "../../components/Header";
 import CustomIcon from "../../components/Icon/CustomIcon";
-import CoffeCard from "../../components/CoffeCard";
+import CoffeCard from "../../components/Card/Coffe";
 
 const getCategoriesFromData = (data: any) => {
   let temp: any = {};
@@ -49,7 +49,7 @@ const getCoffeeList = (category: string, data: any) => {
   return coffeeList;
 };
 
-const Home: React.FC = ({ navigation }: any) => {
+const HomeScreen: React.FC = ({ navigation }: any) => {
   const CoffeList = useStore((state: any) => state.CoffeeList);
   const BeansList = useStore((state: any) => state.BeanList);
 
@@ -140,7 +140,7 @@ const Home: React.FC = ({ navigation }: any) => {
 
   return (
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+      <StatusBar backgroundColor={COLORS.primaryPaleDogwoodHex} />
       <ScrollView
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.ScrollViewFlex}
@@ -159,13 +159,13 @@ const Home: React.FC = ({ navigation }: any) => {
               color={
                 searchText.length > 0
                   ? COLORS.primaryOrangeHex
-                  : COLORS.primaryLightGreyHex
+                  : COLORS.primaryBeaverHex
               }
             />
           </TouchableOpacity>
           <TextInput
             placeholder="Find Your Coffe..."
-            placeholderTextColor={COLORS.primaryLightGreyHex}
+            placeholderTextColor={COLORS.primaryBeaverHex}
             value={searchText}
             onChangeText={(txt) => {
               setSearchText(txt);
@@ -178,7 +178,7 @@ const Home: React.FC = ({ navigation }: any) => {
               <CustomIcon
                 style={styles.InputIcon}
                 name="close"
-                color={COLORS.primaryLightGreyHex}
+                color={COLORS.primaryBeaverHex}
                 size={FONTSIZE.size_16}
               />
             </TouchableOpacity>
@@ -313,7 +313,7 @@ const Home: React.FC = ({ navigation }: any) => {
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
+    backgroundColor: COLORS.primaryPaleDogwoodHex,
   },
   ScrollViewFlex: {
     flexGrow: 1,
@@ -321,14 +321,14 @@ const styles = StyleSheet.create({
   ScreenTitle: {
     fontSize: FONTSIZE.size_28,
     fontFamily: FONTFAMILY.poppins_semibold,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
     paddingLeft: SPACING.space_30,
   },
   InputContainerComponent: {
     flexDirection: "row",
     margin: SPACING.space_30,
     borderRadius: BORDERRADIUS.radius_20,
-    backgroundColor: COLORS.primaryDarkGreyHex,
+    backgroundColor: COLORS.primaryLinenyHex,
     alignItems: "center",
   },
   InputIcon: {
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     height: SPACING.space_20 * 3,
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   CategoryScrollViewStyle: {
     paddingHorizontal: SPACING.space_20,
@@ -354,7 +354,7 @@ const styles = StyleSheet.create({
   CategoryText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryLightGreyHex,
+    color: COLORS.primaryBlackHex,
     marginBottom: SPACING.space_4,
   },
   ActiveCategory: {
@@ -383,4 +383,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default HomeScreen;

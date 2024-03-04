@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     color: COLORS.primaryOrangeHex,
   },
   Price: {
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
   PayButton: {
     backgroundColor: COLORS.primaryOrangeHex,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   ButtonText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
+    color: COLORS.primaryBlackHex,
   },
 });
 
