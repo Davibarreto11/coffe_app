@@ -60,14 +60,6 @@ const Details: React.FC = ({ navigation, route }: any) => {
   );
   const [price, setPrice] = useState(choice.prices[0]);
 
-  console.log(price);
-  // console.log(
-  //   choice.name,
-  //   choice.imagelink_portrait,
-  //   choice.favourite,
-  //   choice.id
-  // );
-
   const ToggleFavourite = useCallback(
     (favourite: boolean, type: string, id: string) => {
       favourite
@@ -101,9 +93,7 @@ const Details: React.FC = ({ navigation, route }: any) => {
         prices: [{ ...price, quantity: 1 }],
       });
       calculateCartPrice();
-      navigation.navigate("Cart", {
-        imagelink_portrait: route.params.imagelink_portrait,
-      });
+      navigation.navigate("Cart");
     },
     []
   );
@@ -121,7 +111,7 @@ const Details: React.FC = ({ navigation, route }: any) => {
       >
         <ImageBackgroundInfo
           EnableBackHandler={true}
-          imagelink_portrait={route.params.imagelink_portrait}
+          imagelink_portrait={choice.imagelink_portrait}
           type={choice.type}
           id={choice.id}
           favourite={choice.favourite}

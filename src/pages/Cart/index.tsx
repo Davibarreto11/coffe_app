@@ -21,6 +21,8 @@ const Cart: React.FC = ({ navigation, route }: any) => {
   const CartList = useStore((state: any) => state.CartList);
   const CartPrice = useStore((state: any) => state.CartPrice);
 
+  console.log(CartList);
+
   const incrementCartItemQuantity = useStore(
     (state: any) => state.incrementCartItemQuantity
   );
@@ -88,7 +90,7 @@ const Cart: React.FC = ({ navigation, route }: any) => {
                     <CartItem
                       id={data.id}
                       name={data.name}
-                      imagelink_portrait={route.params.imagelink_portrait}
+                      imagelink_portrait={data.imagelink_portrait}
                       imagelink_square={data.imagelink_square}
                       special_ingredient={data.special_ingredient}
                       roasted={data.roasted}
