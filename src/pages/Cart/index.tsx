@@ -51,7 +51,7 @@ const CartScreen: React.FC = ({ navigation, route }: any) => {
 
   const buttonPressHandle = useCallback(() => {
     navigation.push("Payment", { amount: CartPrice });
-  }, []);
+  }, [CartPrice]);
 
   return (
     <View style={styles.ScreenContainer}>

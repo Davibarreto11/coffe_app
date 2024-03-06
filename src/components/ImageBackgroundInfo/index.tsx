@@ -176,6 +176,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primaryPaleDogwoodRGBA,
     borderTopLeftRadius: BORDERRADIUS.radius_20 * 2,
     borderTopRightRadius: BORDERRADIUS.radius_20 * 2,
+    // opacity: 0.9
   },
   ImageInfoInnerContainer: {
     justifyContent: "space-between",

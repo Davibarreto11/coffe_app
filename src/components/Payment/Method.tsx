@@ -48,6 +48,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
               color={COLORS.primaryOrangeHex}
               size={FONTSIZE.size_30}
             />
+            <Text style={styles.TitleWallet}>Wallet</Text>
           </View>
           <Text style={styles.PaymentPice}>@ 100.50</Text>
         </LinearGradient>
@@ -86,6 +87,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: SPACING.space_24,
   },
+  TitleWallet: {
+    fontFamily: FONTFAMILY.poppins_semibold,
+    fontSize: FONTSIZE.size_16,
+    color: COLORS.primaryBlackHex,
+  },
   PaymentTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
@@ -102,7 +108,7 @@ const styles = StyleSheet.create({
   PaymentPice: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.secondaryLightGreyHex,
+    color: COLORS.primaryBlackHex,
   },
   PaymentImage: {
     height: SPACING.space_30,

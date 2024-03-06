@@ -66,7 +66,7 @@ const DetailsScreen: React.FC = ({ navigation, route }: any) => {
         ? deleteFromFavoriteList(type, id)
         : addToFavoriteList(type, id);
     },
-    []
+    [deleteFromFavoriteList, addToFavoriteList, choice.favourite]
   );
 
   const AddToCartHandler = useCallback(

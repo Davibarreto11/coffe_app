@@ -98,6 +98,8 @@ const TabNavigator: React.FC = () => {
 const styles = StyleSheet.create({
   tabBarStyle: {
     height: 80,
+    backgroundColor: COLORS.primaryPaleDogwoodRGBA,
+    opacity: 0.75,
     position: "absolute",
     borderTopWidth: 0,
     elevation: 0,
